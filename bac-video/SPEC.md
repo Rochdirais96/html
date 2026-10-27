@@ -1,6 +1,6 @@
 GOAL:    a Bac student understands "AI studied every past sujet for me" and taps the link to buy the PDF.
 OUTPUT:  HyperFrames, 1080 x 1920, 30 fps. Text inside y 168–1330 (platform UI), captions at y≈1190–1300.
-TIME:    55 s x 30 = 1650 frames. Music 120 BPM = 15 frames/beat. VO (take B, Achraf, Darija) is the clock.
+TIME:    54.12 s x 30 = 1624 frames. Music 120 BPM = 15 frames/beat. VO (take B, Achraf, Darija) is the clock.
 LOOK:    worlds are flat colour fields, no gradients: lime #D4FF3F, cobalt #2E3BFF, signal red #FF3B2F, paper #F5F3EE; ink #0F0F12.
          accent = signal red, only on the trap ("العفسة") and the CTA arrow. Display: Alexandria 900, 150–230 px, tracking 0;
          body Alexandria 600 44–56 px. Medium: cut paper — exam sheets #FFFFFF with 2 px ink rule, hard offset shadow 14 px 14 px 0 ink.

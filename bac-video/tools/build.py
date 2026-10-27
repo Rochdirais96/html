@@ -1,7 +1,7 @@
 # Writes index.html and compositions/*.html. Re-run after editing this file; the outputs are plain HTML.
 import json, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-W, H, DUR = 1080, 1920, 55
+W, H, DUR = 1080, 1920, 54.12
 
 AR = "U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC"
 LA = "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
@@ -109,16 +109,16 @@ s1_js = """
     }
     tl.to("#s1-clock", { scale: 0, duration: 0.25, ease: "power3.in" }, 5.2);
     tl.to("#s1-band", { scaleY: 0, duration: 0.25, ease: "power3.in" }, 5.45);
-    tl.to("#s1-iris", { clipPath: "circle(80% at 50% 50%)", duration: 0.4, ease: "power3.in" }, 5.55);
+    tl.to("#s1-iris", { clipPath: "circle(80% at 50% 50%)", duration: 0.36, ease: "power3.in" }, 5.5);
 """
-write("compositions/s1.html", scene("s1", s1_css, s1_body, s1_js, 6.0))
+write("compositions/s1.html", scene("s1", s1_css, s1_body, s1_js, 5.9))
 
 # ---------- S2 collect (6.0 - 15.3) local ----------
 fan = [(-330, 520, -9), (-110, 470, -3), (110, 470, 3), (330, 520, 9), (-220, 860, -6), (220, 860, 6)]
 s2_sheets = "".join(sheet(f"s2-sh{i}", b) for i, b in enumerate(BRANCHES))
 s2_css = SHEET_CSS + """
 #s2-bg{background:var(--paper);}
-#s2-q{right:0;left:0;top:200px;text-align:center;font-size:190px;}
+#s2-q{right:0;left:0;top:220px;text-align:center;font-size:120px;white-space:nowrap;}
 .sheet{left:330px;top:640px;}
 #s2-dev{left:140px;top:1500px;width:800px;height:420px;background:var(--cobalt);border:4px solid var(--ink);border-radius:46px;box-shadow:16px 16px 0 var(--ink);}
 #s2-slot{position:absolute;left:90px;right:90px;top:70px;height:44px;border-radius:22px;background:var(--ink);border:4px solid var(--lime);}
@@ -128,32 +128,32 @@ s2_css = SHEET_CSS + """
 """
 s2_body = f"""    <div id="s2-bg" class="full"></div>
     <div id="s2-wm" class="wm" data-layout-ignore style="color:#EAE7DF">BAC</div>
-    <div id="s2-q" class="abs disp">واش درنا؟</div>
+    <div id="s2-q" class="abs disp">كل مواضيع الباك</div>
     {s2_sheets}
     <div id="s2-dev" class="abs"><div id="s2-slot"></div><div id="s2-ai">AI</div><div id="s2-ai-sub">Intelligence Artificielle</div></div>
     <div id="s2-flood" class="full"></div>"""
 s2_js = "    const fan = " + json.dumps(fan) + ";\n" + """
-    tl.fromTo("#s2-q", { opacity: 0, filter: "blur(10px)", scale: 1.15 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 0.0);
-    tl.to("#s2-q", { y: -40, scale: 0.6, duration: 0.5, ease: "power3.inOut" }, 0.85);
+    tl.fromTo("#s2-q", { opacity: 0, filter: "blur(10px)", scale: 1.15 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 0.1);
+    tl.to("#s2-q", { y: -40, scale: 0.8, duration: 0.5, ease: "power3.inOut" }, 0.9);
     // "جبنا كامل les sujets" - each branch's paper is dealt onto the table
     fan.forEach((f, i) => {
-      tl.fromTo("#s2-sh" + i, { x: 1200, y: f[1] - 640 + 200, rotation: 30, scale: 0.92 }, { x: f[0], y: f[1] - 640, rotation: f[2], scale: 0.66, duration: 0.5, ease: "expo.out" }, 1.0 + i * 0.32);
+      tl.fromTo("#s2-sh" + i, { x: 1200, y: f[1] - 640 + 200, rotation: 30, scale: 0.92 }, { x: f[0], y: f[1] - 640, rotation: f[2], scale: 0.66, duration: 0.5, ease: "expo.out" }, 0.22 + i * 0.32);
     });
     // "في كامل les branches" - each branch name gets marked
-    for (let i = 0; i < 6; i++) tl.fromTo("#s2-sh" + i + "-br", { "--hl": "0%" }, { "--hl": "100%", duration: 0.25, ease: "power2.out" }, 4.45 + i * 0.12);
-    tl.to("#s2-q", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, 5.5);
+    for (let i = 0; i < 6; i++) tl.fromTo("#s2-sh" + i + "-br", { "--hl": "0%" }, { "--hl": "100%", duration: 0.25, ease: "power2.out" }, 3.67 + i * 0.12);
+    tl.to("#s2-q", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, 4.72);
     // "ودخلناهم فـ l'Intelligence Artificielle" - the AI device rises and swallows them
-    tl.fromTo("#s2-dev", { y: 0 }, { y: -620, duration: 0.6, ease: "expo.out" }, 5.6);
+    tl.fromTo("#s2-dev", { y: 0 }, { y: -620, duration: 0.6, ease: "expo.out" }, 4.82);
     fan.forEach((f, i) => {
-      tl.to("#s2-sh" + i, { x: 0, y: 60, rotation: 0, scale: 0.1, opacity: 0, duration: 0.42, ease: "power3.in" }, 6.0 + i * 0.12);
+      tl.to("#s2-sh" + i, { x: 0, y: 60, rotation: 0, scale: 0.1, opacity: 0, duration: 0.42, ease: "power3.in" }, 5.22 + i * 0.12);
     });
-    tl.fromTo("#s2-ai-sub", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 6.45);
-    tl.to("#s2-dev", { y: -1000, duration: 0.6, ease: "power3.inOut" }, 7.0);
+    tl.fromTo("#s2-ai-sub", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.67);
+    tl.to("#s2-dev", { y: -1000, duration: 0.6, ease: "power3.inOut" }, 6.22);
     // "des modèles prédictifs" - the device becomes the cobalt world
-    tl.to("#s2-dev", { scale: 6, duration: 0.5, ease: "power3.in" }, 8.5);
-    tl.to("#s2-flood", { clipPath: "inset(0% 0 0 0)", duration: 0.3, ease: "power3.in" }, 8.6);
+    tl.to("#s2-dev", { scale: 6, duration: 0.5, ease: "power3.in" }, 7.72);
+    tl.to("#s2-flood", { clipPath: "inset(0% 0 0 0)", duration: 0.3, ease: "power3.in" }, 7.82);
 """
-write("compositions/s2.html", scene("s2", s2_css, s2_body, s2_js, 9.3))
+write("compositions/s2.html", scene("s2", s2_css, s2_body, s2_js, 8.52))
 
 # ---------- S3 scan (15.3 - 26.4) ----------
 QS = ["١) أدرس تغيّرات الدالة f", "٢) احسب النهاية عند ∞+", "٣) استنتج معادلة المماس"]
@@ -411,7 +411,7 @@ write("compositions/s6.html", scene("s6", s6_css, s6_body, s6_js, 10.7))
 
 # ---------- captions (0 - 55) ----------
 words = json.load(open(os.path.join(ROOT, "tools/words.json")))
-SIZES = [2,4,3,2,2,2,4,5,2,5,4,4,4,5,2,3,4,2,4,4,3,4,5,3,2,5,2,4,4,3,4,5,3,2,4,2,3,3,5,6,4]
+SIZES = [2,4,3,2,2,4,5,2,5,4,4,4,5,2,3,4,2,4,4,3,4,5,3,2,5,2,4,4,3,4,5,3,2,4,2,3,3,5,6,4]
 assert sum(SIZES) == len(words), (sum(SIZES), len(words))
 groups, k = [], 0
 for n in SIZES:
@@ -435,14 +435,14 @@ cap_css = """
 write("compositions/captions.html", scene("captions", cap_css, cap_html, cap_js, DUR))
 
 # ---------- root ----------
-SCENES = [("s1", 0, 6.0), ("s2", 6.0, 9.3), ("s3", 15.3, 11.1), ("s4", 26.4, 6.1), ("s5", 32.5, 11.8), ("s6", 44.3, 10.7)]
+SCENES = [("s1", 0, 5.9), ("s2", 5.9, 8.52), ("s3", 14.42, 11.1), ("s4", 25.52, 6.1), ("s5", 31.62, 11.8), ("s6", 43.42, 10.7)]
 hosts = "".join(f'      <div id="{s}" data-composition-id="{s}" data-composition-src="compositions/{s}.html" data-start="{a}" data-duration="{d}" data-track-index="1" data-track-kind="graphics" data-width="{W}" data-height="{H}" style="z-index:1"></div>\n' for s, a, d in SCENES)
 # (id, file, start, volume, duration) - starts put each file's measured peak one frame after its picture
-SFX = [("sfx-whoosh1", "whoosh.mp3", 5.6, 0.7, 0.57), ("sfx-whoosh2", "whoosh-short.mp3", 14.65, 0.7, 0.57), ("sfx-pop1", "pop.mp3", 18.66, 0.9, 0.72),
-       ("sfx-pop2", "pop.mp3", 21.65, 0.7, 0.72), ("sfx-impact", "impact-bass-1.mp3", 24.36, 0.8, 2.1), ("sfx-whoosh3", "whoosh.mp3", 25.95, 0.6, 0.57),
-       ("sfx-whoosh4", "whoosh-short.mp3", 28.1, 0.6, 0.57), ("sfx-riser", "riser.mp3", 29.06, 0.5, 4.4), ("sfx-pop3", "pop.mp3", 34.92, 0.9, 0.72),
-       ("sfx-whoosh5", "whoosh-short.mp3", 37.33, 0.6, 0.57), ("sfx-pop4", "pop.mp3", 43.12, 0.8, 0.72), ("sfx-whoosh6", "whoosh.mp3", 43.72, 0.6, 0.57),
-       ("sfx-click", "click.mp3", 47.96, 1.0, 0.36)]
+SFX = [("sfx-whoosh1", "whoosh.mp3", 5.52, 0.7, 0.57), ("sfx-whoosh2", "whoosh-short.mp3", 13.77, 0.7, 0.57), ("sfx-pop1", "pop.mp3", 17.78, 0.9, 0.72),
+       ("sfx-pop2", "pop.mp3", 20.77, 0.7, 0.72), ("sfx-impact", "impact-bass-1.mp3", 23.48, 0.8, 2.1), ("sfx-whoosh3", "whoosh.mp3", 25.07, 0.6, 0.57),
+       ("sfx-whoosh4", "whoosh-short.mp3", 27.22, 0.6, 0.57), ("sfx-riser", "riser.mp3", 28.18, 0.5, 4.4), ("sfx-pop3", "pop.mp3", 34.04, 0.9, 0.72),
+       ("sfx-whoosh5", "whoosh-short.mp3", 36.45, 0.6, 0.57), ("sfx-pop4", "pop.mp3", 42.24, 0.8, 0.72), ("sfx-whoosh6", "whoosh.mp3", 42.84, 0.6, 0.57),
+       ("sfx-click", "click.mp3", 47.08, 1.0, 0.36)]
 sfx = "".join(f'      <audio id="{i}" class="clip" src="assets/audio/{f}" data-start="{t}" data-duration="{d}" data-track-index="{5 + n % 2}" data-volume="{v}"></audio>\n' for n, (i, f, t, v, d) in enumerate(SFX))
 VARS = [{"id": "color-ground", "type": "color", "label": "Lime", "default": "#D4FF3F"}]
 index = f"""<!doctype html>

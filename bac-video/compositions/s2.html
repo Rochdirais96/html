@@ -25,7 +25,7 @@
 .ln{height:12px;border-radius:6px;background:#D9D7D0;margin-top:26px;}
 
 #s2-bg{background:var(--paper);}
-#s2-q{right:0;left:0;top:200px;text-align:center;font-size:190px;}
+#s2-q{right:0;left:0;top:220px;text-align:center;font-size:120px;white-space:nowrap;}
 .sheet{left:330px;top:640px;}
 #s2-dev{left:140px;top:1500px;width:800px;height:420px;background:var(--cobalt);border:4px solid var(--ink);border-radius:46px;box-shadow:16px 16px 0 var(--ink);}
 #s2-slot{position:absolute;left:90px;right:90px;top:70px;height:44px;border-radius:22px;background:var(--ink);border:4px solid var(--lime);}
@@ -37,7 +37,7 @@
   <div id="root" data-composition-id="s2" data-width="1080" data-height="1920">
     <div id="s2-bg" class="full"></div>
     <div id="s2-wm" class="wm" data-layout-ignore style="color:#EAE7DF">BAC</div>
-    <div id="s2-q" class="abs disp">واش درنا؟</div>
+    <div id="s2-q" class="abs disp">كل مواضيع الباك</div>
     <div id="s2-sh0" class="sheet">
       <div class="sh-rep" data-layout-ignore>الجمهورية الجزائرية الديمقراطية الشعبية</div>
       <div class="sh-ttl" data-layout-ignore>امتحان بكالوريا التعليم الثانوي</div>
@@ -82,27 +82,27 @@
     const tl = gsap.timeline({ paused: true });
     const fan = [[-330, 520, -9], [-110, 470, -3], [110, 470, 3], [330, 520, 9], [-220, 860, -6], [220, 860, 6]];
 
-    tl.fromTo("#s2-q", { opacity: 0, filter: "blur(10px)", scale: 1.15 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 0.0);
-    tl.to("#s2-q", { y: -40, scale: 0.6, duration: 0.5, ease: "power3.inOut" }, 0.85);
+    tl.fromTo("#s2-q", { opacity: 0, filter: "blur(10px)", scale: 1.15 }, { opacity: 1, filter: "blur(0px)", scale: 1, duration: 0.2, ease: "power4.out" }, 0.1);
+    tl.to("#s2-q", { y: -40, scale: 0.8, duration: 0.5, ease: "power3.inOut" }, 0.9);
     // "جبنا كامل les sujets" - each branch's paper is dealt onto the table
     fan.forEach((f, i) => {
-      tl.fromTo("#s2-sh" + i, { x: 1200, y: f[1] - 640 + 200, rotation: 30, scale: 0.92 }, { x: f[0], y: f[1] - 640, rotation: f[2], scale: 0.66, duration: 0.5, ease: "expo.out" }, 1.0 + i * 0.32);
+      tl.fromTo("#s2-sh" + i, { x: 1200, y: f[1] - 640 + 200, rotation: 30, scale: 0.92 }, { x: f[0], y: f[1] - 640, rotation: f[2], scale: 0.66, duration: 0.5, ease: "expo.out" }, 0.22 + i * 0.32);
     });
     // "في كامل les branches" - each branch name gets marked
-    for (let i = 0; i < 6; i++) tl.fromTo("#s2-sh" + i + "-br", { "--hl": "0%" }, { "--hl": "100%", duration: 0.25, ease: "power2.out" }, 4.45 + i * 0.12);
-    tl.to("#s2-q", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, 5.5);
+    for (let i = 0; i < 6; i++) tl.fromTo("#s2-sh" + i + "-br", { "--hl": "0%" }, { "--hl": "100%", duration: 0.25, ease: "power2.out" }, 3.67 + i * 0.12);
+    tl.to("#s2-q", { opacity: 0, filter: "blur(8px)", duration: 0.2 }, 4.72);
     // "ودخلناهم فـ l'Intelligence Artificielle" - the AI device rises and swallows them
-    tl.fromTo("#s2-dev", { y: 0 }, { y: -620, duration: 0.6, ease: "expo.out" }, 5.6);
+    tl.fromTo("#s2-dev", { y: 0 }, { y: -620, duration: 0.6, ease: "expo.out" }, 4.82);
     fan.forEach((f, i) => {
-      tl.to("#s2-sh" + i, { x: 0, y: 60, rotation: 0, scale: 0.1, opacity: 0, duration: 0.42, ease: "power3.in" }, 6.0 + i * 0.12);
+      tl.to("#s2-sh" + i, { x: 0, y: 60, rotation: 0, scale: 0.1, opacity: 0, duration: 0.42, ease: "power3.in" }, 5.22 + i * 0.12);
     });
-    tl.fromTo("#s2-ai-sub", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 6.45);
-    tl.to("#s2-dev", { y: -1000, duration: 0.6, ease: "power3.inOut" }, 7.0);
+    tl.fromTo("#s2-ai-sub", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.67);
+    tl.to("#s2-dev", { y: -1000, duration: 0.6, ease: "power3.inOut" }, 6.22);
     // "des modèles prédictifs" - the device becomes the cobalt world
-    tl.to("#s2-dev", { scale: 6, duration: 0.5, ease: "power3.in" }, 8.5);
-    tl.to("#s2-flood", { clipPath: "inset(0% 0 0 0)", duration: 0.3, ease: "power3.in" }, 8.6);
+    tl.to("#s2-dev", { scale: 6, duration: 0.5, ease: "power3.in" }, 7.72);
+    tl.to("#s2-flood", { clipPath: "inset(0% 0 0 0)", duration: 0.3, ease: "power3.in" }, 7.82);
 
-    tl.set({}, {}, 9.3);
+    tl.set({}, {}, 8.52);
     window.__timelines["s2"] = tl;
   </script>
 </template>
