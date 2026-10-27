@@ -1,0 +1,109 @@
+<template>
+  <style>
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-800-normal.woff2") format("woff2");font-weight:800;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-800-normal.woff2") format("woff2");font-weight:800;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-900-normal.woff2") format("woff2");font-weight:900;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-900-normal.woff2") format("woff2");font-weight:900;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+#root{--lime:#D4FF3F;--cobalt:#2E3BFF;--red:#FF3B2F;--paper:#F5F3EE;--ink:#0F0F12;position:absolute;inset:0;overflow:hidden;font-family:"Alexandria",sans-serif;color:var(--ink);direction:rtl;}
+.abs{position:absolute;}
+.full{position:absolute;inset:0;}
+.disp{font-weight:900;line-height:1.05;letter-spacing:0;}
+.wm{position:absolute;left:-40px;right:-40px;top:1360px;text-align:center;direction:ltr;font-weight:900;font-size:520px;line-height:1;letter-spacing:-10px;}
+
+#s5-bg{background:var(--paper);}
+#s5-doc{left:150px;top:260px;width:700px;height:900px;}
+.dpage{position:absolute;inset:0;background:#fff;border:4px solid var(--ink);border-radius:16px;box-shadow:18px 18px 0 var(--ink);overflow:hidden;}
+#s5-cover-top{position:absolute;left:0;right:0;top:0;height:470px;background:var(--cobalt);}
+#s5-pdftag{position:absolute;left:40px;top:40px;padding:6px 22px;background:var(--lime);border:4px solid var(--ink);border-radius:10px;font-size:52px;font-weight:900;direction:ltr;}
+#s5-ctitle{position:absolute;right:46px;left:46px;top:170px;color:#fff;font-size:76px;font-weight:900;line-height:1.15;}
+#s5-csub{position:absolute;right:46px;left:46px;top:520px;font-size:40px;font-weight:800;line-height:1.35;}
+#s5-cfoot{position:absolute;right:46px;left:46px;bottom:46px;font-size:30px;font-weight:600;opacity:.7;}
+.tab{position:absolute;right:-250px;width:210px;height:80px;background:#fff;border:4px solid var(--ink);border-radius:0 14px 14px 0;font-size:30px;font-weight:800;display:flex;align-items:center;padding-right:24px;padding-left:16px;}
+.tab.sel{background:var(--lime);}
+#s5-tabs{position:absolute;left:880px;top:260px;width:10px;height:900px;}
+.tab{right:auto;left:-40px;}
+#s5-in{background:#fff;}
+#s5-in-h{position:absolute;right:46px;top:46px;font-size:54px;font-weight:900;}
+#s5-in-sub{position:absolute;right:46px;top:120px;font-size:30px;font-weight:600;opacity:.7;direction:rtl;}
+#s5-chart{position:absolute;right:46px;left:46px;top:200px;}
+.brow{display:flex;align-items:center;gap:20px;height:96px;}
+.blab{width:250px;font-size:34px;font-weight:800;}
+.btrack{flex:1;height:50px;background:#ECEAE4;border-radius:10px;overflow:hidden;}
+.bfill{height:100%;background:var(--cobalt);border-radius:10px;transform-origin:right center;}
+#s5-hist{position:absolute;right:46px;left:46px;top:720px;height:90px;}
+#s5-hist-line{position:absolute;left:0;right:0;top:40px;height:8px;background:var(--ink);border-radius:4px;transform-origin:right center;}
+.hdot{position:absolute;top:24px;width:40px;height:40px;border-radius:50%;background:var(--lime);border:6px solid var(--ink);}
+#s5-hist-l{position:absolute;right:0;top:-48px;font-size:30px;font-weight:800;direction:ltr;}
+#s5-one{left:700px;top:200px;width:200px;height:200px;border-radius:50%;background:var(--lime);border:6px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;}
+#s5-one b{font-size:84px;line-height:1;direction:ltr;} #s5-one i{font-style:normal;font-size:40px;direction:ltr;}
+#s5-up{left:110px;top:430px;width:300px;height:420px;}
+#s5-grade{left:80px;top:860px;padding:12px 28px;background:var(--ink);color:var(--lime);border-radius:14px;font-size:58px;font-weight:900;}
+#s5-easy{left:430px;top:1060px;padding:10px 28px;background:var(--lime);border:5px solid var(--ink);border-radius:14px;font-size:54px;font-weight:900;box-shadow:8px 8px 0 var(--ink);}
+#s5-flood{background:var(--lime);clip-path:circle(0% at 50% 50%);}
+
+  </style>
+  <div id="root" data-composition-id="s5" data-width="1080" data-height="1920">
+    <div id="s5-bg" class="full"></div>
+    <div id="s5-wm" class="wm" data-layout-ignore style="color:#EAE7DF">PDF</div>
+    <div id="s5-tabs"><div id="s5-tab0" class="tab" data-layout-allow-overlap style="top:150px">علوم تجريبية</div><div id="s5-tab1" class="tab sel" data-layout-allow-overlap style="top:246px">رياضيات</div><div id="s5-tab2" class="tab" data-layout-allow-overlap style="top:342px">تقني رياضي</div><div id="s5-tab3" class="tab" data-layout-allow-overlap style="top:438px">تسيير واقتصاد</div><div id="s5-tab4" class="tab" data-layout-allow-overlap style="top:534px">آداب وفلسفة</div><div id="s5-tab5" class="tab" data-layout-allow-overlap style="top:630px">لغات أجنبية</div></div>
+    <div id="s5-doc" class="abs">
+      <div id="s5-cover" class="dpage">
+        <div id="s5-cover-top"><div id="s5-pdftag">PDF</div><div id="s5-ctitle">مواضيع الباك محلّلة بالـ AI</div></div>
+        <div id="s5-csub">الأسئلة لي تتعاود · العفسات · les patterns</div>
+        <div id="s5-cfoot">منظم حسب الشعبة</div>
+      </div>
+      <div id="s5-in" class="dpage">
+        <div id="s5-in-h">les statistiques</div>
+        <div id="s5-in-sub">مثال توضيحي</div>
+        <div id="s5-chart"><div class="brow"><div class="blab">الدوال</div><div class="btrack"><div id="s5-bar0" class="bfill" style="width:92%"></div></div></div><div class="brow"><div class="blab">المتتاليات</div><div class="btrack"><div id="s5-bar1" class="bfill" style="width:74%"></div></div></div><div class="brow"><div class="blab">الاحتمالات</div><div class="btrack"><div id="s5-bar2" class="bfill" style="width:66%"></div></div></div><div class="brow"><div class="blab">الأعداد المركبة</div><div class="btrack"><div id="s5-bar3" class="bfill" style="width:58%"></div></div></div><div class="brow"><div class="blab">الهندسة</div><div class="btrack"><div id="s5-bar4" class="bfill" style="width:41%"></div></div></div></div>
+        <div id="s5-hist"><div id="s5-hist-l">l'historique · BAC</div><div id="s5-hist-line"></div><div class="hdot s5-hd" style="left:0%"></div><div class="hdot s5-hd" style="left:22%"></div><div class="hdot s5-hd" style="left:44%"></div><div class="hdot s5-hd" style="left:66%"></div><div class="hdot s5-hd" style="left:88%"></div></div>
+      </div>
+    </div>
+    <div id="s5-one" class="abs"><b>1</b><i>fichier</i></div>
+    <svg id="s5-up" class="abs" viewBox="0 0 300 420"><path d="M150 10 L290 170 L200 170 L200 410 L100 410 L100 170 L10 170 Z" fill="#D4FF3F" stroke="#0F0F12" stroke-width="12" stroke-linejoin="round"/></svg>
+    <div id="s5-grade" class="abs">النقطة تاعك</div>
+    <div id="s5-easy" class="abs">بأقل جهد</div>
+    <div id="s5-flood" class="full"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // the page from the ordered plan grows into the PDF
+    tl.fromTo("#s5-doc", { scale: 0.29, y: 0, rotation: 0 }, { scale: 1, y: 0, rotation: -2, duration: 0.6, ease: "expo.out" }, 0.0);
+    tl.set("#s5-in", { opacity: 0 }, 0);
+    tl.fromTo("#s5-ctitle", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, 0.45);
+    tl.fromTo("#s5-csub", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.8);
+    // "fichier PDF واحد"
+    tl.fromTo("#s5-pdftag", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 1.95);
+    tl.fromTo("#s5-one", { scale: 0, rotation: -30 }, { scale: 1, rotation: 8, duration: 0.3, ease: "back.out(2)" }, 2.5);
+    tl.to("#s5-one", { scale: 0, duration: 0.2, ease: "power3.in" }, 3.4);
+    // "منظم وواجد لشعبتك" - branch tabs slide out, yours is lit
+    for (let i = 0; i < 6; i++) tl.fromTo("#s5-tab" + i, { x: -240 }, { x: 0, duration: 0.35, ease: "expo.out" }, 3.4 + i * 0.07);
+    tl.fromTo("#s5-tab1", { scale: 1 }, { scale: 1.12, duration: 0.2, ease: "back.out(2)" }, 4.25);
+    // "فيه قاع الـ data و les statistiques" - open the PDF
+    tl.to("#s5-tabs", { opacity: 0, duration: 0.2 }, 4.95);
+    tl.to("#s5-cover", { rotationY: -90, transformOrigin: "100% 50%", duration: 0.35, ease: "power3.in" }, 4.95);
+    tl.fromTo("#s5-in", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 5.25);
+    tl.to("#s5-doc", { rotation: 0, duration: 0.4, ease: "power3.inOut" }, 5.0);
+    for (let i = 0; i < 5; i++) tl.fromTo("#s5-bar" + i, { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.out" }, 6.0 + i * 0.1);
+    // "l'historique تاع البكالوريات"
+    tl.fromTo("#s5-hist-line", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.inOut" }, 7.8);
+    tl.fromTo(".s5-hd", { scale: 0 }, { scale: 1, duration: 0.2, stagger: 0.1, ease: "back.out(2)" }, 7.9);
+    // "باش تضمن النقطة تاعك بأقل جهد"
+    tl.fromTo("#s5-up", { y: 500, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 9.35);
+    tl.fromTo("#s5-grade", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)" }, 9.6);
+    tl.fromTo("#s5-easy", { scale: 0, rotation: 12 }, { scale: 1, rotation: -4, duration: 0.28, ease: "back.out(2.2)" }, 10.7);
+    // carry: everything shrinks to the CTA's PDF icon while lime floods
+    tl.to(["#s5-up", "#s5-grade", "#s5-easy"], { opacity: 0, scale: 0.6, duration: 0.2, ease: "power3.in" }, 11.3);
+    tl.to("#s5-doc", { scale: 0.2, y: 120, duration: 0.45, ease: "power3.in" }, 11.3);
+    tl.to("#s5-flood", { clipPath: "circle(120% at 50% 50%)", duration: 0.45, ease: "power2.inOut" }, 11.35);
+
+    tl.set({}, {}, 11.8);
+    window.__timelines["s5"] = tl;
+  </script>
+</template>

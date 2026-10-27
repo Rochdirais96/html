@@ -1,0 +1,339 @@
+<template>
+  <style>
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-600-normal.woff2") format("woff2");font-weight:600;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-800-normal.woff2") format("woff2");font-weight:800;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-800-normal.woff2") format("woff2");font-weight:800;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-arabic-900-normal.woff2") format("woff2");font-weight:900;font-style:normal;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;}
+@font-face{font-family:"Alexandria";src:url("assets/fonts/alexandria-latin-900-normal.woff2") format("woff2");font-weight:900;font-style:normal;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
+#root{--lime:#D4FF3F;--cobalt:#2E3BFF;--red:#FF3B2F;--paper:#F5F3EE;--ink:#0F0F12;position:absolute;inset:0;overflow:hidden;font-family:"Alexandria",sans-serif;color:var(--ink);direction:rtl;}
+.abs{position:absolute;}
+.full{position:absolute;inset:0;}
+.disp{font-weight:900;line-height:1.05;letter-spacing:0;}
+.wm{position:absolute;left:-40px;right:-40px;top:1360px;text-align:center;direction:ltr;font-weight:900;font-size:520px;line-height:1;letter-spacing:-10px;}
+
+.cg{position:absolute;left:0;right:0;top:1190px;text-align:center;opacity:0;}
+.cbox{display:inline-block;max-width:900px;background:var(--ink);border-radius:14px;padding:12px 28px 16px;line-height:1.35;font-size:54px;font-weight:800;color:#fff;}
+.cw{display:inline;}
+
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div id="c0" class="cg"><div class="cbox"><span id="c0w0" class="cw">صحاب</span> <span id="c0w1" class="cw">الباك!</span></div></div>
+    <div id="c1" class="cg"><div class="cbox"><span id="c1w0" class="cw">مازالكم</span> <span id="c1w1" class="cw">تحفظوا</span> <span id="c1w2" class="cw">في</span> <span id="c1w3" class="cw">كلش</span></div></div>
+    <div id="c2" class="cg"><div class="cbox"><span id="c2w0" class="cw">وتضيعوا</span> <span id="c2w1" class="cw">في</span> <span id="c2w2" class="cw">وقتكم؟</span></div></div>
+    <div id="c3" class="cg"><div class="cbox"><span id="c3w0" class="cw">حبسوا</span> <span id="c3w1" class="cw">دقيقة</span></div></div>
+    <div id="c4" class="cg"><div class="cbox"><span id="c4w0" class="cw">وسمعوني</span> <span id="c4w1" class="cw">مليح.</span></div></div>
+    <div id="c5" class="cg"><div class="cbox"><span id="c5w0" class="cw">واش</span> <span id="c5w1" class="cw">درنا؟</span></div></div>
+    <div id="c6" class="cg"><div class="cbox"><span id="c6w0" class="cw">جبنا</span> <span id="c6w1" class="cw">كامل</span> <span id="c6w2" class="cw">les</span> <span id="c6w3" class="cw">sujets</span></div></div>
+    <div id="c7" class="cg"><div class="cbox"><span id="c7w0" class="cw">تاع</span> <span id="c7w1" class="cw">الـ</span> <span id="c7w2" class="cw">Bac</span> <span id="c7w3" class="cw">لي</span> <span id="c7w4" class="cw">طاحوا</span></div></div>
+    <div id="c8" class="cg"><div class="cbox"><span id="c8w0" class="cw">في</span> <span id="c8w1" class="cw">دزاير</span></div></div>
+    <div id="c9" class="cg"><div class="cbox"><span id="c9w0" class="cw">فـ</span> <span id="c9w1" class="cw">les</span> <span id="c9w2" class="cw">années</span> <span id="c9w3" class="cw">لي</span> <span id="c9w4" class="cw">فاتوا،</span></div></div>
+    <div id="c10" class="cg"><div class="cbox"><span id="c10w0" class="cw">في</span> <span id="c10w1" class="cw">كامل</span> <span id="c10w2" class="cw">les</span> <span id="c10w3" class="cw">branches،</span></div></div>
+    <div id="c11" class="cg"><div class="cbox"><span id="c11w0" class="cw">ودخلناهم</span> <span id="c11w1" class="cw">فـ</span> <span id="c11w2" class="cw">l’Intelligence</span> <span id="c11w3" class="cw">Artificielle</span></div></div>
+    <div id="c12" class="cg"><div class="cbox"><span id="c12w0" class="cw">و</span> <span id="c12w1" class="cw">des</span> <span id="c12w2" class="cw">modèles</span> <span id="c12w3" class="cw">prédictifs.</span></div></div>
+    <div id="c13" class="cg"><div class="cbox"><span id="c13w0" class="cw">هاد</span> <span id="c13w1" class="cw">الـ</span> <span id="c13w2" class="cw">AI</span> <span id="c13w3" class="cw">حلل</span> <span id="c13w4" class="cw">كلش!</span></div></div>
+    <div id="c14" class="cg"><div class="cbox"><span id="c14w0" class="cw">خرجنا</span> <span id="c14w1" class="cw">الاسئلة</span></div></div>
+    <div id="c15" class="cg"><div class="cbox"><span id="c15w0" class="cw">لي</span> <span id="c15w1" class="cw">ديما</span> <span id="c15w2" class="cw">تتعاود،</span></div></div>
+    <div id="c16" class="cg"><div class="cbox"><span id="c16w0" class="cw">وش</span> <span id="c16w1" class="cw">هما</span> <span id="c16w2" class="cw">les</span> <span id="c16w3" class="cw">patterns</span></div></div>
+    <div id="c17" class="cg"><div class="cbox"><span id="c17w0" class="cw">لي</span> <span id="c17w1" class="cw">يتبعوهم،</span></div></div>
+    <div id="c18" class="cg"><div class="cbox"><span id="c18w0" class="cw">وعلاش</span> <span id="c18w1" class="cw">les</span> <span id="c18w2" class="cw">profs</span> <span id="c18w3" class="cw">يحطوا</span></div></div>
+    <div id="c19" class="cg"><div class="cbox"><span id="c19w0" class="cw">هاد</span> <span id="c19w1" class="cw">les</span> <span id="c19w2" class="cw">questions</span> <span id="c19w3" class="cw">بالذات،</span></div></div>
+    <div id="c20" class="cg"><div class="cbox"><span id="c20w0" class="cw">وشنو</span> <span id="c20w1" class="cw">هي</span> <span id="c20w2" class="cw">العفسة</span></div></div>
+    <div id="c21" class="cg"><div class="cbox"><span id="c21w0" class="cw">لي</span> <span id="c21w1" class="cw">يحوسوا</span> <span id="c21w2" class="cw">يجربوكم</span> <span id="c21w3" class="cw">فيها.</span></div></div>
+    <div id="c22" class="cg"><div class="cbox"><span id="c22w0" class="cw">يعني</span> <span id="c22w1" class="cw">بدل</span> <span id="c22w2" class="cw">ما</span> <span id="c22w3" class="cw">تقرا</span> <span id="c22w4" class="cw">عشوائي،</span></div></div>
+    <div id="c23" class="cg"><div class="cbox"><span id="c23w0" class="cw">تولي</span> <span id="c23w1" class="cw">فاهم</span> <span id="c23w2" class="cw">اللعبة</span></div></div>
+    <div id="c24" class="cg"><div class="cbox"><span id="c24w0" class="cw">كيفاش</span> <span id="c24w1" class="cw">تمشي</span></div></div>
+    <div id="c25" class="cg"><div class="cbox"><span id="c25w0" class="cw">وعقلية</span> <span id="c25w1" class="cw">لي</span> <span id="c25w2" class="cw">حط</span> <span id="c25w3" class="cw">le</span> <span id="c25w4" class="cw">sujet</span></div></div>
+    <div id="c26" class="cg"><div class="cbox"><span id="c26w0" class="cw">كيفاش</span> <span id="c26w1" class="cw">تخمم!</span></div></div>
+    <div id="c27" class="cg"><div class="cbox"><span id="c27w0" class="cw">هاد</span> <span id="c27w1" class="cw">الخدمة</span> <span id="c27w2" class="cw">كامل</span> <span id="c27w3" class="cw">جمعناها</span></div></div>
+    <div id="c28" class="cg"><div class="cbox"><span id="c28w0" class="cw">في</span> <span id="c28w1" class="cw">fichier</span> <span id="c28w2" class="cw">PDF</span> <span id="c28w3" class="cw">واحد،</span></div></div>
+    <div id="c29" class="cg"><div class="cbox"><span id="c29w0" class="cw">منظم</span> <span id="c29w1" class="cw">وواجد</span> <span id="c29w2" class="cw">لشعبتك،</span></div></div>
+    <div id="c30" class="cg"><div class="cbox"><span id="c30w0" class="cw">فيه</span> <span id="c30w1" class="cw">قاع</span> <span id="c30w2" class="cw">الـ</span> <span id="c30w3" class="cw">data</span></div></div>
+    <div id="c31" class="cg"><div class="cbox"><span id="c31w0" class="cw">و</span> <span id="c31w1" class="cw">les</span> <span id="c31w2" class="cw">statistiques</span> <span id="c31w3" class="cw">لي</span> <span id="c31w4" class="cw">تحتاجهم</span></div></div>
+    <div id="c32" class="cg"><div class="cbox"><span id="c32w0" class="cw">على</span> <span id="c32w1" class="cw">حساب</span> <span id="c32w2" class="cw">l'historique</span></div></div>
+    <div id="c33" class="cg"><div class="cbox"><span id="c33w0" class="cw">تاع</span> <span id="c33w1" class="cw">البكالوريات</span></div></div>
+    <div id="c34" class="cg"><div class="cbox"><span id="c34w0" class="cw">باش</span> <span id="c34w1" class="cw">تضمن</span> <span id="c34w2" class="cw">النقطة</span> <span id="c34w3" class="cw">تاعك</span></div></div>
+    <div id="c35" class="cg"><div class="cbox"><span id="c35w0" class="cw">بأقل</span> <span id="c35w1" class="cw">جهد.</span></div></div>
+    <div id="c36" class="cg"><div class="cbox"><span id="c36w0" class="cw">ما</span> <span id="c36w1" class="cw">تضيعش</span> <span id="c36w2" class="cw">الفرصة</span></div></div>
+    <div id="c37" class="cg"><div class="cbox"><span id="c37w0" class="cw">والوقت</span> <span id="c37w1" class="cw">راه</span> <span id="c37w2" class="cw">يجري،</span></div></div>
+    <div id="c38" class="cg"><div class="cbox"><span id="c38w0" class="cw">اضغط</span> <span id="c38w1" class="cw">على</span> <span id="c38w2" class="cw">الرابط</span> <span id="c38w3" class="cw">لي</span> <span id="c38w4" class="cw">لتحت</span></div></div>
+    <div id="c39" class="cg"><div class="cbox"><span id="c39w0" class="cw">و</span> <span id="c39w1" class="cw">اشري</span> <span id="c39w2" class="cw">الـ</span> <span id="c39w3" class="cw">PDF</span> <span id="c39w4" class="cw">تاعك</span> <span id="c39w5" class="cw">درك،</span></div></div>
+    <div id="c40" class="cg"><div class="cbox"><span id="c40w0" class="cw">واربح</span> <span id="c40w1" class="cw">مئات</span> <span id="c40w2" class="cw">الساعات</span> <span id="c40w3" class="cw">بذكاء!</span></div></div>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#c0", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 0.214);
+    tl.set("#c0w0", { color: "#D4FF3F" }, 0.274);
+    tl.set("#c0w1", { color: "#D4FF3F" }, 0.400);
+    tl.to("#c0", { opacity: 0, duration: 0.08 }, 0.900);
+    tl.set("#c0", { opacity: 0, visibility: "hidden" }, 0.980);
+    tl.fromTo("#c1", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 0.980);
+    tl.set("#c1w0", { color: "#D4FF3F" }, 1.040);
+    tl.set("#c1w1", { color: "#D4FF3F" }, 1.520);
+    tl.set("#c1w2", { color: "#D4FF3F" }, 1.920);
+    tl.set("#c1w3", { color: "#D4FF3F" }, 2.080);
+    tl.to("#c1", { opacity: 0, duration: 0.08 }, 2.340);
+    tl.set("#c1", { opacity: 0, visibility: "hidden" }, 2.420);
+    tl.fromTo("#c2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 2.420);
+    tl.set("#c2w0", { color: "#D4FF3F" }, 2.480);
+    tl.set("#c2w1", { color: "#D4FF3F" }, 2.840);
+    tl.set("#c2w2", { color: "#D4FF3F" }, 2.960);
+    tl.to("#c2", { opacity: 0, duration: 0.08 }, 3.700);
+    tl.set("#c2", { opacity: 0, visibility: "hidden" }, 3.780);
+    tl.fromTo("#c3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 3.780);
+    tl.set("#c3w0", { color: "#D4FF3F" }, 3.840);
+    tl.set("#c3w1", { color: "#D4FF3F" }, 4.160);
+    tl.to("#c3", { opacity: 0, duration: 0.08 }, 4.500);
+    tl.set("#c3", { opacity: 0, visibility: "hidden" }, 4.580);
+    tl.fromTo("#c4", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 4.580);
+    tl.set("#c4w0", { color: "#D4FF3F" }, 4.640);
+    tl.set("#c4w1", { color: "#D4FF3F" }, 5.160);
+    tl.to("#c4", { opacity: 0, duration: 0.08 }, 5.740);
+    tl.set("#c4", { opacity: 0, visibility: "hidden" }, 5.820);
+    tl.fromTo("#c5", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 5.820);
+    tl.set("#c5w0", { color: "#D4FF3F" }, 5.880);
+    tl.set("#c5w1", { color: "#D4FF3F" }, 6.080);
+    tl.to("#c5", { opacity: 0, duration: 0.08 }, 6.700);
+    tl.set("#c5", { opacity: 0, visibility: "hidden" }, 6.780);
+    tl.fromTo("#c6", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 6.780);
+    tl.set("#c6w0", { color: "#D4FF3F" }, 6.840);
+    tl.set("#c6w1", { color: "#D4FF3F" }, 7.160);
+    tl.set("#c6w2", { color: "#D4FF3F" }, 7.520);
+    tl.set("#c6w3", { color: "#D4FF3F" }, 7.640);
+    tl.to("#c6", { opacity: 0, duration: 0.08 }, 7.780);
+    tl.set("#c6", { opacity: 0, visibility: "hidden" }, 7.860);
+    tl.fromTo("#c7", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 7.860);
+    tl.set("#c7w0", { color: "#D4FF3F" }, 7.920);
+    tl.set("#c7w1", { color: "#D4FF3F" }, 8.040);
+    tl.set("#c7w2", { color: "#D4FF3F" }, 8.120);
+    tl.set("#c7w3", { color: "#D4FF3F" }, 8.360);
+    tl.set("#c7w4", { color: "#D4FF3F" }, 8.480);
+    tl.to("#c7", { opacity: 0, duration: 0.08 }, 8.620);
+    tl.set("#c7", { opacity: 0, visibility: "hidden" }, 8.700);
+    tl.fromTo("#c8", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 8.700);
+    tl.set("#c8w0", { color: "#D4FF3F" }, 8.760);
+    tl.set("#c8w1", { color: "#D4FF3F" }, 8.880);
+    tl.to("#c8", { opacity: 0, duration: 0.08 }, 9.100);
+    tl.set("#c8", { opacity: 0, visibility: "hidden" }, 9.180);
+    tl.fromTo("#c9", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 9.180);
+    tl.set("#c9w0", { color: "#D4FF3F" }, 9.240);
+    tl.set("#c9w1", { color: "#D4FF3F" }, 9.360);
+    tl.set("#c9w2", { color: "#D4FF3F" }, 9.520);
+    tl.set("#c9w3", { color: "#D4FF3F" }, 9.720);
+    tl.set("#c9w4", { color: "#D4FF3F" }, 9.840);
+    tl.to("#c9", { opacity: 0, duration: 0.08 }, 10.340);
+    tl.set("#c9", { opacity: 0, visibility: "hidden" }, 10.420);
+    tl.fromTo("#c10", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 10.420);
+    tl.set("#c10w0", { color: "#D4FF3F" }, 10.480);
+    tl.set("#c10w1", { color: "#D4FF3F" }, 10.640);
+    tl.set("#c10w2", { color: "#D4FF3F" }, 11.000);
+    tl.set("#c10w3", { color: "#D4FF3F" }, 11.120);
+    tl.to("#c10", { opacity: 0, duration: 0.08 }, 11.660);
+    tl.set("#c10", { opacity: 0, visibility: "hidden" }, 11.740);
+    tl.fromTo("#c11", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 11.740);
+    tl.set("#c11w0", { color: "#D4FF3F" }, 11.800);
+    tl.set("#c11w1", { color: "#D4FF3F" }, 12.360);
+    tl.set("#c11w2", { color: "#D4FF3F" }, 12.427);
+    tl.set("#c11w3", { color: "#D4FF3F" }, 13.040);
+    tl.to("#c11", { opacity: 0, duration: 0.08 }, 13.700);
+    tl.set("#c11", { opacity: 0, visibility: "hidden" }, 13.780);
+    tl.fromTo("#c12", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 13.780);
+    tl.set("#c12w0", { color: "#D4FF3F" }, 13.840);
+    tl.set("#c12w1", { color: "#D4FF3F" }, 14.000);
+    tl.set("#c12w2", { color: "#D4FF3F" }, 14.160);
+    tl.set("#c12w3", { color: "#D4FF3F" }, 14.480);
+    tl.to("#c12", { opacity: 0, duration: 0.08 }, 15.209);
+    tl.set("#c12", { opacity: 0, visibility: "hidden" }, 15.289);
+    tl.fromTo("#c13", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 15.289);
+    tl.set("#c13w0", { color: "#D4FF3F" }, 15.349);
+    tl.set("#c13w1", { color: "#D4FF3F" }, 15.520);
+    tl.set("#c13w2", { color: "#D4FF3F" }, 15.680);
+    tl.set("#c13w3", { color: "#D4FF3F" }, 16.000);
+    tl.set("#c13w4", { color: "#D4FF3F" }, 16.480);
+    tl.to("#c13", { opacity: 0, duration: 0.08 }, 17.140);
+    tl.set("#c13", { opacity: 0, visibility: "hidden" }, 17.220);
+    tl.fromTo("#c14", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 17.220);
+    tl.set("#c14w0", { color: "#D4FF3F" }, 17.280);
+    tl.set("#c14w1", { color: "#D4FF3F" }, 17.680);
+    tl.to("#c14", { opacity: 0, duration: 0.08 }, 18.060);
+    tl.set("#c14", { opacity: 0, visibility: "hidden" }, 18.140);
+    tl.fromTo("#c15", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 18.140);
+    tl.set("#c15w0", { color: "#D4FF3F" }, 18.200);
+    tl.set("#c15w1", { color: "#D4FF3F" }, 18.400);
+    tl.set("#c15w2", { color: "#D4FF3F" }, 18.640);
+    tl.to("#c15", { opacity: 0, duration: 0.08 }, 19.300);
+    tl.set("#c15", { opacity: 0, visibility: "hidden" }, 19.380);
+    tl.fromTo("#c16", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 19.380);
+    tl.set("#c16w0", { color: "#D4FF3F" }, 19.440);
+    tl.set("#c16w1", { color: "#D4FF3F" }, 19.640);
+    tl.set("#c16w2", { color: "#D4FF3F" }, 19.840);
+    tl.set("#c16w3", { color: "#D4FF3F" }, 20.120);
+    tl.to("#c16", { opacity: 0, duration: 0.08 }, 20.260);
+    tl.set("#c16", { opacity: 0, visibility: "hidden" }, 20.340);
+    tl.fromTo("#c17", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 20.340);
+    tl.set("#c17w0", { color: "#D4FF3F" }, 20.400);
+    tl.set("#c17w1", { color: "#D4FF3F" }, 20.560);
+    tl.to("#c17", { opacity: 0, duration: 0.08 }, 21.220);
+    tl.set("#c17", { opacity: 0, visibility: "hidden" }, 21.300);
+    tl.fromTo("#c18", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 21.300);
+    tl.set("#c18w0", { color: "#D4FF3F" }, 21.360);
+    tl.set("#c18w1", { color: "#D4FF3F" }, 21.760);
+    tl.set("#c18w2", { color: "#D4FF3F" }, 22.000);
+    tl.set("#c18w3", { color: "#D4FF3F" }, 22.240);
+    tl.to("#c18", { opacity: 0, duration: 0.08 }, 22.380);
+    tl.set("#c18", { opacity: 0, visibility: "hidden" }, 22.460);
+    tl.fromTo("#c19", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 22.460);
+    tl.set("#c19w0", { color: "#D4FF3F" }, 22.520);
+    tl.set("#c19w1", { color: "#D4FF3F" }, 22.720);
+    tl.set("#c19w2", { color: "#D4FF3F" }, 22.960);
+    tl.set("#c19w3", { color: "#D4FF3F" }, 23.200);
+    tl.to("#c19", { opacity: 0, duration: 0.08 }, 23.820);
+    tl.set("#c19", { opacity: 0, visibility: "hidden" }, 23.900);
+    tl.fromTo("#c20", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 23.900);
+    tl.set("#c20w0", { color: "#D4FF3F" }, 23.960);
+    tl.set("#c20w1", { color: "#D4FF3F" }, 24.240);
+    tl.set("#c20w2", { color: "#D4FF3F" }, 24.400);
+    tl.to("#c20", { opacity: 0, duration: 0.08 }, 24.620);
+    tl.set("#c20", { opacity: 0, visibility: "hidden" }, 24.700);
+    tl.fromTo("#c21", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 24.700);
+    tl.set("#c21w0", { color: "#D4FF3F" }, 24.760);
+    tl.set("#c21w1", { color: "#D4FF3F" }, 24.880);
+    tl.set("#c21w2", { color: "#D4FF3F" }, 25.200);
+    tl.set("#c21w3", { color: "#D4FF3F" }, 25.760);
+    tl.to("#c21", { opacity: 0, duration: 0.08 }, 26.340);
+    tl.set("#c21", { opacity: 0, visibility: "hidden" }, 26.420);
+    tl.fromTo("#c22", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 26.420);
+    tl.set("#c22w0", { color: "#D4FF3F" }, 26.480);
+    tl.set("#c22w1", { color: "#D4FF3F" }, 26.800);
+    tl.set("#c22w2", { color: "#D4FF3F" }, 27.080);
+    tl.set("#c22w3", { color: "#D4FF3F" }, 27.200);
+    tl.set("#c22w4", { color: "#D4FF3F" }, 27.480);
+    tl.to("#c22", { opacity: 0, duration: 0.08 }, 28.060);
+    tl.set("#c22", { opacity: 0, visibility: "hidden" }, 28.140);
+    tl.fromTo("#c23", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 28.140);
+    tl.set("#c23w0", { color: "#D4FF3F" }, 28.200);
+    tl.set("#c23w1", { color: "#D4FF3F" }, 28.560);
+    tl.set("#c23w2", { color: "#D4FF3F" }, 28.840);
+    tl.to("#c23", { opacity: 0, duration: 0.08 }, 29.100);
+    tl.set("#c23", { opacity: 0, visibility: "hidden" }, 29.180);
+    tl.fromTo("#c24", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 29.180);
+    tl.set("#c24w0", { color: "#D4FF3F" }, 29.240);
+    tl.set("#c24w1", { color: "#D4FF3F" }, 29.560);
+    tl.to("#c24", { opacity: 0, duration: 0.08 }, 29.940);
+    tl.set("#c24", { opacity: 0, visibility: "hidden" }, 30.020);
+    tl.fromTo("#c25", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 30.020);
+    tl.set("#c25w0", { color: "#D4FF3F" }, 30.080);
+    tl.set("#c25w1", { color: "#D4FF3F" }, 30.640);
+    tl.set("#c25w2", { color: "#D4FF3F" }, 30.800);
+    tl.set("#c25w3", { color: "#D4FF3F" }, 30.960);
+    tl.set("#c25w4", { color: "#D4FF3F" }, 31.080);
+    tl.to("#c25", { opacity: 0, duration: 0.08 }, 31.220);
+    tl.set("#c25", { opacity: 0, visibility: "hidden" }, 31.300);
+    tl.fromTo("#c26", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 31.300);
+    tl.set("#c26w0", { color: "#D4FF3F" }, 31.360);
+    tl.set("#c26w1", { color: "#D4FF3F" }, 31.760);
+    tl.to("#c26", { opacity: 0, duration: 0.08 }, 32.380);
+    tl.set("#c26", { opacity: 0, visibility: "hidden" }, 32.460);
+    tl.fromTo("#c27", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 32.460);
+    tl.set("#c27w0", { color: "#D4FF3F" }, 32.520);
+    tl.set("#c27w1", { color: "#D4FF3F" }, 32.680);
+    tl.set("#c27w2", { color: "#D4FF3F" }, 33.120);
+    tl.set("#c27w3", { color: "#D4FF3F" }, 33.440);
+    tl.to("#c27", { opacity: 0, duration: 0.08 }, 33.780);
+    tl.set("#c27", { opacity: 0, visibility: "hidden" }, 33.860);
+    tl.fromTo("#c28", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 33.860);
+    tl.set("#c28w0", { color: "#D4FF3F" }, 33.920);
+    tl.set("#c28w1", { color: "#D4FF3F" }, 34.040);
+    tl.set("#c28w2", { color: "#D4FF3F" }, 34.480);
+    tl.set("#c28w3", { color: "#D4FF3F" }, 35.040);
+    tl.to("#c28", { opacity: 0, duration: 0.08 }, 35.740);
+    tl.set("#c28", { opacity: 0, visibility: "hidden" }, 35.820);
+    tl.fromTo("#c29", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 35.820);
+    tl.set("#c29w0", { color: "#D4FF3F" }, 35.880);
+    tl.set("#c29w1", { color: "#D4FF3F" }, 36.240);
+    tl.set("#c29w2", { color: "#D4FF3F" }, 36.720);
+    tl.to("#c29", { opacity: 0, duration: 0.08 }, 37.380);
+    tl.set("#c29", { opacity: 0, visibility: "hidden" }, 37.460);
+    tl.fromTo("#c30", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 37.460);
+    tl.set("#c30w0", { color: "#D4FF3F" }, 37.520);
+    tl.set("#c30w1", { color: "#D4FF3F" }, 37.840);
+    tl.set("#c30w2", { color: "#D4FF3F" }, 38.000);
+    tl.set("#c30w3", { color: "#D4FF3F" }, 38.200);
+    tl.to("#c30", { opacity: 0, duration: 0.08 }, 38.220);
+    tl.set("#c30", { opacity: 0, visibility: "hidden" }, 38.300);
+    tl.fromTo("#c31", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 38.300);
+    tl.set("#c31w0", { color: "#D4FF3F" }, 38.360);
+    tl.set("#c31w1", { color: "#D4FF3F" }, 38.480);
+    tl.set("#c31w2", { color: "#D4FF3F" }, 38.640);
+    tl.set("#c31w3", { color: "#D4FF3F" }, 39.080);
+    tl.set("#c31w4", { color: "#D4FF3F" }, 39.200);
+    tl.to("#c31", { opacity: 0, duration: 0.08 }, 39.780);
+    tl.set("#c31", { opacity: 0, visibility: "hidden" }, 39.860);
+    tl.fromTo("#c32", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 39.860);
+    tl.set("#c32w0", { color: "#D4FF3F" }, 39.920);
+    tl.set("#c32w1", { color: "#D4FF3F" }, 40.200);
+    tl.set("#c32w2", { color: "#D4FF3F" }, 40.360);
+    tl.to("#c32", { opacity: 0, duration: 0.08 }, 40.700);
+    tl.set("#c32", { opacity: 0, visibility: "hidden" }, 40.780);
+    tl.fromTo("#c33", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 40.780);
+    tl.set("#c33w0", { color: "#D4FF3F" }, 40.840);
+    tl.set("#c33w1", { color: "#D4FF3F" }, 40.987);
+    tl.to("#c33", { opacity: 0, duration: 0.08 }, 41.700);
+    tl.set("#c33", { opacity: 0, visibility: "hidden" }, 41.780);
+    tl.fromTo("#c34", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 41.780);
+    tl.set("#c34w0", { color: "#D4FF3F" }, 41.840);
+    tl.set("#c34w1", { color: "#D4FF3F" }, 42.080);
+    tl.set("#c34w2", { color: "#D4FF3F" }, 42.440);
+    tl.set("#c34w3", { color: "#D4FF3F" }, 42.800);
+    tl.to("#c34", { opacity: 0, duration: 0.08 }, 43.060);
+    tl.set("#c34", { opacity: 0, visibility: "hidden" }, 43.140);
+    tl.fromTo("#c35", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 43.140);
+    tl.set("#c35w0", { color: "#D4FF3F" }, 43.200);
+    tl.set("#c35w1", { color: "#D4FF3F" }, 43.800);
+    tl.to("#c35", { opacity: 0, duration: 0.08 }, 44.167);
+    tl.set("#c35", { opacity: 0, visibility: "hidden" }, 44.247);
+    tl.fromTo("#c36", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 44.247);
+    tl.set("#c36w0", { color: "#D4FF3F" }, 44.307);
+    tl.set("#c36w1", { color: "#D4FF3F" }, 44.400);
+    tl.set("#c36w2", { color: "#D4FF3F" }, 44.800);
+    tl.to("#c36", { opacity: 0, duration: 0.08 }, 45.060);
+    tl.set("#c36", { opacity: 0, visibility: "hidden" }, 45.140);
+    tl.fromTo("#c37", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 45.140);
+    tl.set("#c37w0", { color: "#D4FF3F" }, 45.200);
+    tl.set("#c37w1", { color: "#D4FF3F" }, 45.680);
+    tl.set("#c37w2", { color: "#D4FF3F" }, 45.880);
+    tl.to("#c37", { opacity: 0, duration: 0.08 }, 46.340);
+    tl.set("#c37", { opacity: 0, visibility: "hidden" }, 46.420);
+    tl.fromTo("#c38", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 46.420);
+    tl.set("#c38w0", { color: "#D4FF3F" }, 46.480);
+    tl.set("#c38w1", { color: "#D4FF3F" }, 46.800);
+    tl.set("#c38w2", { color: "#D4FF3F" }, 46.920);
+    tl.set("#c38w3", { color: "#D4FF3F" }, 47.280);
+    tl.set("#c38w4", { color: "#D4FF3F" }, 47.400);
+    tl.to("#c38", { opacity: 0, duration: 0.08 }, 47.700);
+    tl.set("#c38", { opacity: 0, visibility: "hidden" }, 47.780);
+    tl.fromTo("#c39", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 47.780);
+    tl.set("#c39w0", { color: "#D4FF3F" }, 47.840);
+    tl.set("#c39w1", { color: "#D4FF3F" }, 48.000);
+    tl.set("#c39w2", { color: "#D4FF3F" }, 48.200);
+    tl.set("#c39w3", { color: "#D4FF3F" }, 48.280);
+    tl.set("#c39w4", { color: "#D4FF3F" }, 48.680);
+    tl.set("#c39w5", { color: "#D4FF3F" }, 49.040);
+    tl.to("#c39", { opacity: 0, duration: 0.08 }, 49.540);
+    tl.set("#c39", { opacity: 0, visibility: "hidden" }, 49.620);
+    tl.fromTo("#c40", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.1, ease: "power3.out" }, 49.620);
+    tl.set("#c40w0", { color: "#D4FF3F" }, 49.680);
+    tl.set("#c40w1", { color: "#D4FF3F" }, 50.000);
+    tl.set("#c40w2", { color: "#D4FF3F" }, 50.400);
+    tl.set("#c40w3", { color: "#D4FF3F" }, 50.880);
+    tl.to("#c40", { opacity: 0, duration: 0.08 }, 52.100);
+    tl.set("#c40", { opacity: 0, visibility: "hidden" }, 52.180);
+
+    tl.set({}, {}, 55);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>
